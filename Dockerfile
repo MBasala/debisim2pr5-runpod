@@ -7,8 +7,8 @@
 #   docker build -t fly0ut/debisim2p5-runpod:latest .
 #   docker push fly0ut/debisim2p5-runpod:latest
 # ===========================================================================
-
-FROM fly0ut/debisim2p5:cuda12.6
+ARG CUDA_VAR=cuda12.6
+FROM fly0ut/debisim2p5:${CUDA_VAR}
 
 # Install runpod SDK into the existing venv
 RUN pip install --no-cache-dir runpod
