@@ -19,4 +19,4 @@ COPY --chown=debisim:debisim handler.py /app/
 COPY --chown=debisim:debisim .runpod/ /app/.runpod/
 
 # Override entrypoint for RunPod serverless
-ENTRYPOINT ["python", "-u", "handler.py"]
+CMD ["/app/.venv/bin/python", "-u", "handler.py"]
