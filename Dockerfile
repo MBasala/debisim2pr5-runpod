@@ -16,7 +16,6 @@ RUN /app/.venv/bin/pip3 install --no-cache-dir runpod
 
 # Copy handler and RunPod config
 COPY --chown=debisim:debisim handler.py /app/
-COPY --chown=debisim:debisim .runpod/ /app/.runpod/
 
 # Override entrypoint for RunPod serverless
 CMD ["/app/.venv/bin/python", "-u", "handler.py"]
