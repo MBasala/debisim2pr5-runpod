@@ -11,7 +11,7 @@ ARG CUDA_VAR=cuda12.6
 FROM fly0ut/debisim2p5:${CUDA_VAR}
 
 # Install runpod SDK into the existing venv
-RUN pip install --no-cache-dir runpod
+RUN /app/.venv/bin/pip install --no-cache-dir runpod
 
 # Copy handler and RunPod config
 COPY --chown=debisim:debisim handler.py /app/
