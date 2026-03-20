@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --build-arg=${{ inputs.CUDA_VAR }} --tag debisim2p5-runpod:${{ inputs.CUDA_VAR }}
+      run: docker build . --file Dockerfile --build-arg=${{ inputs.CUDA_VAR }} --tag fly0ut/debisim2p5-runpod:${{ inputs.CUDA_VAR }}
     - name: Login to Dockerhub
       run: docker login -u fly0ut --password-stdin <<< "$DOCKERHUB_TOKEN"
       env:
